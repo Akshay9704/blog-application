@@ -73,15 +73,15 @@ const PostDetails = () => {
           </div>
           <div className=" w-[100%] flex flex-col justify-center   " >
             <img src={IMG + post.photo} className="object-cover h-[45vh] mx-auto mt-8" alt="" />
-            <p className="mx-auto mt-8 w-[80vh] border p-5 shadow-xl">{post.content}</p>
-            <div className="flex justify-center item-center p-3   flex-col mt-4">
-              <h3 className="mt-6 mb-4  font-semibold">Comments:</h3>
+            <p className="mx-auto mt-8 w-[60vh] lg:w-[80vh] md:w-[60vh] border p-5 shadow-xl">{post.content}</p>
+            <div className="flex justify-center item-center p-3 flex-col mt-4">
+              <h3 className="mt-6 mb-4 font-semibold">Comments:</h3>
               {comments?.map((c) => (
                 <Comment className=" " key={c._id} c={c} post={post} />
               ))}
             </div>
-            {/* write a comment */}
-            <div className="w-[90vh] border flex justify-center flex-col mt-4 md:flex-row">
+            {/* write a comment */} 
+            <div className="lg:w-[90vh] md:w-[70vh] w-[65vh] border flex justify-center flex-col mt-4 md:flex-row">
               <input onChange={(e) => setComment(e.target.value)} type="text" placeholder="Write a comment" className="md:w-[80%] outline-none py-2 px-4 mt-4 md:mt-0" />
               <button onClick={postComment} className="bg-black text-sm text-white px-2 py-2 md:w-[20%] mt-4 md:mt-0">Add Comment</button>
             </div>
